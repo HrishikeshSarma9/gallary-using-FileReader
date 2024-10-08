@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
 
     <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Remix cdn -->
@@ -17,7 +17,7 @@
         .container {
             height: 100svh;
 
-            & .err-msg{
+            & .err-msg {
                 font-size: small;
                 visibility: hidden;
             }
@@ -31,46 +31,41 @@
             <div class="card-body">
                 <h1 class="fs-1 mb-4 text-center">Log In</h1>
                 <form name="login-form" onsubmit="handleSubmit(event)">
-                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" 
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Username"
                         required />
-                        <span class="err-msg d-inline-block mb-2 text-danger" id="err-user">Incorrect Username</span>
+                    <span class="err-msg d-inline-block mb-2 text-danger" id="err-user">Incorrect Username</span>
                     <input type="password" name="password" id="password" class="form-control" placeholder="Password"
                         required />
-                        <span class="err-msg d-inline-block mb-2 text-danger" id="err-pass">Incorrect Password</span>
-                    
-                    <input type="submit" value="Log In" class="btn btn-success w-100">
-                </form>
+                    <span class="err-msg d-inline-block mb-2 text-danger" id="err-pass">Incorrect Password</span>
 
+                    <input type="submit" value="Log In" class="btn btn-success w-100" />
+                </form>
             </div>
         </div>
-
     </div>
 
-
     <script>
-        const handleSubmit=(e) =>{
-            e.preventDefault()
-            
-            let username = document.forms["login-form"]["username"].value
-            let password = document.forms["login-form"]["password"].value
-            if (username === "asd") {
-    if (password === "123") {
-      window.location.href = "./posts.html";
-      sessionStorage.setItem("user", username)
-      sessionStorage.setItem("pass", password)
-    } else {
-        console.log(document.getElementById("err-pass"));
-        
-      document.getElementById("err-pass").style.visibility = "visible";
-    }
-  } else {
-    console.log(document.getElementById("err-user"));
-    document.getElementById("err-user").style.visibility = "visible";
-  }
-            
-        }
-    </script>
+        const handleSubmit = (e) => {
+            e.preventDefault();
 
+            let username = document.forms["login-form"]["username"].value;
+            let password = document.forms["login-form"]["password"].value;
+            if (username === "asd") {
+                if (password === "123") {
+                    window.location.href = "./posts.html";
+                    sessionStorage.setItem("user", username);
+                    sessionStorage.setItem("pass", password);
+                } else {
+                    console.log(document.getElementById("err-pass"));
+
+                    document.getElementById("err-pass").style.visibility = "visible";
+                }
+            } else {
+                console.log(document.getElementById("err-user"));
+                document.getElementById("err-user").style.visibility = "visible";
+            }
+        };
+    </script>
 </body>
 
 </html>
